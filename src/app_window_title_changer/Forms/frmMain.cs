@@ -53,11 +53,22 @@ namespace app_window_title_changer
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode != Keys.F5)
-                return;
+            bool handeld = false;
 
-            this.UpdateWindowsList();         
-            e.Handled = true;
+            switch(e.KeyCode)
+            {
+                case Keys.F5:
+                    this.UpdateWindowsList();   
+                    handeld = true;      
+                    break;
+
+                case Keys.F2:
+                    lstWindows_DoubleClick(null, EventArgs.Empty);
+                    handeld = true;
+                    break;  
+            }
+
+            e.Handled = handeld;
         }
 
         private void lstWindows_DoubleClick(object sender, EventArgs e)

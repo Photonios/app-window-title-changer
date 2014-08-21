@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lstWindows = new System.Windows.Forms.ListBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.tmrRefreshWindowList = new System.Windows.Forms.Timer(this.components);
@@ -60,7 +61,7 @@
             // tmrRefreshWindowList
             // 
             this.tmrRefreshWindowList.Enabled = true;
-            this.tmrRefreshWindowList.Interval = 1000;
+            this.tmrRefreshWindowList.Interval = 500;
             this.tmrRefreshWindowList.Tick += new System.EventHandler(this.tmrRefreshWindowList_Tick);
             // 
             // frmMain
@@ -70,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(638, 265);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstWindows);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmMain";
             this.Text = "Application Windows Title Changer";
